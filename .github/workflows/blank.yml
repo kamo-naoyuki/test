@@ -30,6 +30,11 @@ jobs:
       - name: test
         shell: bash
         run: |
+          choco install -y automake
+          choco install -y sox
+      - name: test
+        shell: bash
+        run: |
           ls
           pwd
           ls .
