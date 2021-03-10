@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: test
         shell: bash
-        run: choco install g++ sox
+        run: bash run.sb
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
