@@ -30,7 +30,7 @@ jobs:
       - name: test
         shell: bash
         run: |
-          brew install sox autoconf automake gcc python3 openblas
+          brew install sox autoconf automake gcc python3
       - name: test
         shell: bash
         run: |
