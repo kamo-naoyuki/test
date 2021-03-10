@@ -35,7 +35,7 @@ echo "=== build kaldi ==="
         fi
         CC=gcc CXX=g++ make -j4 depend
         cd featbin
-        make -j4
+        CC=gcc CXX=g++ make -j4
     )
 )
 
