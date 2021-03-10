@@ -28,8 +28,7 @@ jobs:
     steps:
       - name: test
         shell: bash
-        run: |
-          sudo apt-get install -qq -y g++ sox
+        run: apt-get install -qq -y g++ sox
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
