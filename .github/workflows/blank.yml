@@ -30,7 +30,7 @@ jobs:
       - name: test
         shell: bash
         run: |
-          brew install sox autoconf automake g++
+          brew install sox autoconf automake gcc
       - name: test
         shell: bash
         run: |
