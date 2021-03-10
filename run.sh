@@ -17,15 +17,22 @@ echo "=== build kaldi ==="
 
         cd tools
         ./extras/check_dependencies.sh
-        # extras/install_openblas.sh
-        sudo ./extras/install_mkl.sh
+        if [ "$(uname -s)" == 'Linux' ]; then
+            sudo ./extras/install_mkl.sh
+        else
+            extras/install_openblas.sh
+        fi
         make -j4
     )
     (
         set -eu -o pipefail
 
         cd src
-        ./configure --static --use-cuda=no # --mathlib=OPENBLAS
+        if [ "$(uname -s)" == 'Linux' ]; then
+            ./configure --static --use-cuda=no # --mathlib=OPENBLAS
+        else
+            ./configure --static --use-cuda=no --mathlib=OPENBLAS
+        fi
         make -j4 depend
         cd featbin
         make -j4
