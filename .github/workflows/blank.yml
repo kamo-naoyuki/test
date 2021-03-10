@@ -30,6 +30,7 @@ jobs:
       - name: test
         shell: bash
         run: |
+          apt install automake
           choco install -y automake
           choco install -y sox
       - name: test
