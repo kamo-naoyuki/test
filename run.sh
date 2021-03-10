@@ -22,7 +22,7 @@ echo "=== build kaldi ==="
         else
             extras/install_openblas.sh
         fi
-        make -j4
+        CC=gcc CXX=g++ make -j4
     )
     (
         set -eu -o pipefail
@@ -33,7 +33,7 @@ echo "=== build kaldi ==="
         else
             ./configure --static --use-cuda=no --mathlib=OPENBLAS
         fi
-        make -j4 depend
+        CC=gcc CXX=g++ make -j4 depend
         cd featbin
         make -j4
     )
