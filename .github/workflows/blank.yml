@@ -21,7 +21,7 @@ jobs:
     strategy:
       matrix:
         # os: [ubuntu-latest, windows-latest, macOS-latest]
-        os: [windows-latest]
+        os: [macOS-latest]
     runs-on: ${{ matrix.os }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -30,15 +30,10 @@ jobs:
       - name: test
         shell: bash
         run: |
-          apt install automake
-          choco install -y automake
-          choco install -y sox
+          brew install sox autoconf automake g++
       - name: test
         shell: bash
         run: |
-          ls
-          pwd
-          ls .
           bash run.sh
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
